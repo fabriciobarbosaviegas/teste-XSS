@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Feed de Teste Vulnerável</title>
+    <link>http://exemplo.com</link>
+    <description>Feed para demonstração</description>
+
+    <item>
+      <title>Notícia Inofensiva</title>
+      <link>http://exemplo.com/noticia1</link>
+      <description>Descrição normal</description>
+    </item>
+
+    <!-- Exemplo de item XSS -->
+    <item>
+      <title><![CDATA[<script>alert('XSS via RSS');</script>]]></title>
+      <link>http://exemplo.com/noticia2</link>
+      <description><![CDATA[<img src="x" onerror="alert('Imagem XSS');" />]]></description>
+    </item>
+
+  </channel>
+</rss>
