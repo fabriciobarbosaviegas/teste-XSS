@@ -18,5 +18,13 @@
       <description><![CDATA[<img src="x" onerror="alert('Imagem XSS');" />]]></description>
     </item>
 
+    <!-- Exemplo de item XSS -->
+    <item>
+      <title><script>alert('XSS via RSS');</script></title>
+      <link>http://exemplo.com/noticia3 style="color:red;""</link>
+      <description><img src="x" onerror="alert('Imagem XSS');" /></description>
+      <img src="">
+    </item>
+
   </channel>
 </rss>
