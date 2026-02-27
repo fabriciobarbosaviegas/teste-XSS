@@ -5,25 +5,24 @@
     <link>http://exemplo.com</link>
     <description>Feed para demonstração</description>
 
-    <item>
-      <title>Notícia Inofensiva</title>
-      <link>http://exemplo.com/noticia1</link>
-      <description>Descrição normal</description>
-    </item>
-
     <!-- Exemplo de item XSS -->
     <item>
-      <title><![CDATA[<script>alert('XSS via RSS');</script>]]></title>
+      <title>Alert</title>
       <link>#"onclick="alert('Test')"</link>
-      <description><![CDATA[<img src="x" onerror="alert('Imagem XSS');" />]]></description>
+      <description>Alerta de teste</description>
     </item>
 
-    <!-- Exemplo de item XSS -->
     <item>
-      <title><script>alert('XSS via RSS');</script></title>
-      <link>http://exemplo.com/noticia3 style="color:red;""</link>
-      <description><img src="x" onerror="alert('Imagem XSS');" /></description>
+      <title>Rodar doom</title>
+      <link>#"onclick="alert('Test')"</link>
+      <description>Roda DOOM</description>
     </item>
 
+    <item>
+      <title>Menos elegante</title>
+      <a href="">
+      <link>#"><h1 style='color:red'>OLA MUNDO</h1></a><a href=""  style="</link>
+      <description>Roda DOOM</description>
+    </item>
   </channel>
 </rss>

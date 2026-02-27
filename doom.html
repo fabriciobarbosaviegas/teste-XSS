@@ -1,28 +1,46 @@
-<!doctype html>
-  <html lang="en-us">
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <title>js-dos api</title>
-      <style type="text/css">
-        .dosbox-container { width: 640px; height: 400px; }
-      </style>
-    </head>
-    <body>
-      <div id="dosbox"></div>
-      <br/>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Injeção DOOM - js-dos v8</title>
+    
+    <script src="https://v8.js-dos.com/latest/js-dos.js"></script>
+    <link href="https://v8.js-dos.com/latest/js-dos.css" rel="stylesheet">
+    
+    <style>
+        /* Define um tamanho base para o container do emulador */
+        #dosbox {
+            width: 800px;
+            height: 600px;
+            max-width: 100%;
+            background-color: #111;
+        }
+    </style>
+</head>
+<body>
+    <div id="dosbox"></div>
+    <br/>
+    <a href="#" id="btn-rodar">Rodar DOOM</a>
 
-      <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
-      <script type="text/javascript">
-        var dosbox = new Dosbox({
-          id: "dosbox",
-          onload: function (dosbox) {
-            dosbox.run("https://js-dos.com/cdn/upload/DOOM-@evilution.zip", "./DOOM/DOOM.EXE");
-          },
-          onrun: function (dosbox, app) {
-            console.log("App '" + app + "' is runned");
-          }
+    <script>
+        document.getElementById('btn-rodar').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // 2. Inicializa o player moderno no elemento div
+            Dos(document.getElementById("dosbox"), {
+                // 3. Aponta para um bundle válido (.jsdos)
+                // Se esse link externo for bloqueado por CORS no seu ambiente, 
+                // você precisará baixar o arquivo e hospedá-lo junto com seu HTML.
+                url: "https://v8.js-dos.com/bundles/doom.jsdos", 
+                thinSidebar: true,
+                noCloud: true,
+                autoStart: true,
+                mouseCapture: false
+            });
+            
+            console.log('Script carregado e DOOM v8 inicializado!');
         });
-      </script>
-    </body>
-  </html>
+    </script>
+</body>
+</html>
